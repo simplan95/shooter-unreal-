@@ -3,13 +3,13 @@
 #include "Shooter2GameMode.h"
 #include "Shooter2Character.h"
 #include "UObject/ConstructorHelpers.h"
-#include "ShooterCharacterPlayerController.h"//내플레이어 컨트롤러 인클루딩
+#include "ShooterCharacterPlayerController.h"//내플레이어 컨트롤러 
 #include "Blueprint/UserWidget.h"
 #include "ShooterPlayerState.h"//플레이어 스테이트
 #include "ShooterGameState.h"//게임스테이트
-#include "ShooterCharacterPlayerController.h"// 플레이어 컨트롤러 헤더파일 인클루딩 추가로 플레이어 스테이트도 포함되어있음
+#include "ShooterCharacterPlayerController.h"// 플레이어 컨트롤러 추가로 플레이어 스테이트도 포함
 
-//게임 모드 설정
+//게임모드 설정
 AShooter2GameMode::AShooter2GameMode()
 {
 	// set default pawn class to our Blueprinted character
@@ -50,7 +50,7 @@ void AShooter2GameMode::PostLogin(APlayerController* newplayer)
 	Super::PostLogin(newplayer);
 
 	auto ABPlayerState = Cast<AShooterPlayerState>(newplayer->PlayerState);//플레이어 스테이트 생성 및 초기선언
-	ABPlayerState->InitPlayerData();
+	ABPlayerState->InitPlayerData();//플레이어 점수 초기화
 }
 
 void AShooter2GameMode::BeginPlay() 

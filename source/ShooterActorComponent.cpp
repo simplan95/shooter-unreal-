@@ -4,7 +4,7 @@
 #include "ShooterActorComponent.h"
 #include "ShooterGripGrenade.h"//아이템 수류탄
 
-//액터의 스탯(체력, 공격력, 충알 수, 수류탄 수) 관리
+//액터 스탯 데이터 관리
 UShooterActorComponent::UShooterActorComponent()
 {
 	// Set this component to be initialized when the game starts, and to be ticked every frame.  You can turn these features
@@ -101,7 +101,7 @@ void UShooterActorComponent::SetHP(float NewHP)//HP 세팅
 	}
 }
 
-float UShooterActorComponent::GetHPRatio() const//HP율 세팅
+float UShooterActorComponent::GetHPRatio() const//HP 세팅
 {
 	return (CurrentHP < KINDA_SMALL_NUMBER) ? 0.0f : (CurrentHP / MaxHP);
 	

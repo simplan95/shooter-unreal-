@@ -4,7 +4,7 @@
 #include "ShooterGripGun.h"
 #include "Sound/SoundCue.h"//사운드 큐
 
-//캐릭터가 발사할 총 구현
+//플레이어가 쏠 총 구현
 AShooterGripGun::AShooterGripGun()
 {
  	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
@@ -13,6 +13,7 @@ AShooterGripGun::AShooterGripGun()
 	Gun = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("Gun"));//총메시 초기화
 	Gun->SetCollisionProfileName(TEXT("NoCollision"));//총 콜리전 설정
 	RootComponent = Gun;//루트컴포넌트 지정
+
 	static ConstructorHelpers::FObjectFinder<USkeletalMesh>SK_GUN(TEXT("/Game/FPS_Weapon_Bundle/Weapons/Meshes/AR4/SK_AR4.SK_AR4"));
 	if (SK_GUN.Succeeded())
 	{

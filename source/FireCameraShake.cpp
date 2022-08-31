@@ -3,7 +3,7 @@
 
 #include "FireCameraShake.h"
 
-//플레이어 캐릭터 총 발사 시 카메라 Shake
+//카메라 반동
 UFireCameraShake::UFireCameraShake()
 {
 	// 지속시간

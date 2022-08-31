@@ -67,10 +67,6 @@ private:
 	UPROPERTY(VisibleInstanceOnly, Category = Stat, Meta = (AllowPrivateAccess = true))//AI 미사일 데미지
 		float BossMissleDamage = 15.0f;
 
-	FOnHPIsZeroDelegate OnHPIsZero;//HP가 0일때 발생하는 델리게이트 인스턴스
-	FOnHPChangedDelegate OnHPChanged;//HP업데이트시 발생
-	FOnAmmoCountCangedDelegate OnAmmoCountChaned;//총알 수가 변동시
-	FOnGrenadeCountChagedDelegate OnGrenadeCountChanged;//수류탄 수가 변동시
 
 public:
 	float GetShootDamage() const;//슛 데미지 반환
@@ -96,5 +92,8 @@ public:
 	void SetGrenadeCount(int32 Greande);//현재 가지고 있는 수류탄수 세팅
 	void SetMagazineCount(int32 Bullet);//탄창 총알 수 설정
 		
-
+	FOnHPIsZeroDelegate OnHPIsZero;//HP가 0일때 발생하는 델리게이트 인스턴스
+	FOnHPChangedDelegate OnHPChanged;//HP업데이트시 발생
+	FOnAmmoCountCangedDelegate OnAmmoCountChaned;//총알 수 변동시
+	FOnGrenadeCountChagedDelegate OnGrenadeCountChanged;//수류탄 수 변동시
 };

@@ -31,7 +31,6 @@ public:
 	UPROPERTY(EditAnywhere, meta = (AllowPrivateAccess = "true"))//머즐 신
 		class USceneComponent* MuzzleScene;
 
-	//사운드 USoundBase : UGameplayStatics::PlaySoundAtLocation을 사용하기위해(감쇠) 전체적인 사운드 재생은 UAudioComponent 변수로 설정해도 됨
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = sound)//재장전 사운드
 		class UAudioComponent* ReloadSound;
 

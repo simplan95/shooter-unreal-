@@ -13,19 +13,20 @@ AShooterGameState::AShooterGameState()//생성자로 게임 스테이트 초기화
 	bGameCleared = false;
 }
 
-int32 AShooterGameState::GetTotalGameScore() const
+int32 AShooterGameState::GetTotalGameScore() const//게임 스코어 반환
 {
 	return TotalGameScore;
 }
 
-void AShooterGameState::AddGameScore()
+void AShooterGameState::AddGameScore()//게임 스코어 추가
 {
 	TotalGameScore++;
 }
 
-void AShooterGameState::SetGameCleared()
+void AShooterGameState::SetGameCleared()//게임 클리어
 {
-	for (TActorIterator<AShooterAICharacter> ActorItr(GetWorld()); ActorItr; ++ActorItr)//월드내 AI캐릭터들을 확인후 타이머 클리어
+	//월드내 AI캐릭터들을 확인후 타이머 클리어
+	for (TActorIterator<AShooterAICharacter> ActorItr(GetWorld()); ActorItr; ++ActorItr)
 	{
 		GetWorld()->GetTimerManager().ClearTimer(ActorItr->DeadTimerHandle);
 	}
